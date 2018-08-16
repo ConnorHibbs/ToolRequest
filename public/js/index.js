@@ -1,14 +1,20 @@
 
 $().ready(() => {
 
+    for(let i = 0; i < 3; i++) addStep();
+
     $('#add_steps').click(() => {
         addStep();
+    });
+
+    $("#submit_button").click(() => {
+        generateRequest();
     });
 
     $("tbody").sortable({
         appendTo: "parent",
         helper: "clone",
-        update: updateTableNumbering
+        // update: updateTableNumbering // This re-orders the numbers each time
     }).disableSelection();
 
     initAutoGrowTextarea();
@@ -16,6 +22,10 @@ $().ready(() => {
 
 function addStep() {
     let tbody = document.getElementById("steps");
+
+    let hamburgerCell = document.createElement("td");
+    hamburgerCell.innerHTML = "<br>&#9776;";
+    // hamburgerCell.appendChild(document.createTextNode("<br>&#9776;"));
 
     let descriptionCell = document.createElement("td");
     let descriptionTextArea = document.createElement("textarea");
@@ -30,21 +40,32 @@ function addStep() {
     timeTextField.setAttribute("rows", "1");
     timeCell.appendChild(timeTextField);
 
+    let xCell = document.createElement("td");
+    let xButton = document.createElement("button");
+    xButton.innerHTML = "&times;";
+    // xButton.setAttribute("text", "<br>&times;");
+    xButton.setAttribute("class", "closeButton");
+    xButton.setAttribute("type", "button");
+    xButton.setAttribute("onclick", "$(this).closest('tr').remove()");
+    xCell.appendChild(xButton);
+
     let tr = document.createElement("tr");
-    tr.appendChild(document.createElement("td"));
+    tr.appendChild(hamburgerCell);
     tr.appendChild(descriptionCell);
     tr.appendChild(timeCell);
+    tr.appendChild(xCell);
 
     tbody.appendChild(tr);
 
-    updateTableNumbering();
+    // temporarily deciding not to update numbering, instead using hamburgers
+    // updateTableNumbering();
 }
-
 
 function updateTableNumbering() {
     let table = document.getElementById("steps_table");
 
     for (let i = 1, row; row = table.rows[i]; i++) {
+        // row.cells[0].innerHTML = i;
         row.cells[0].innerHTML = i;
     }
 }
@@ -88,4 +109,14 @@ function enableAutoGrowOn(textarea) {
     textarea.focus();
     textarea.select();
     delayedResize();
+}
+
+function generateRequest() {
+    let request = {};
+
+    request.name = $("#nameField").val();
+    request.email = $("#emailField").val();
+    request.department = $("#departmentField").val();
+
+    console.log(request);
 }

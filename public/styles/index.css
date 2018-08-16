@@ -8,7 +8,7 @@ div {
 }
 
 body {
-    background-image: url("../img/blueprint.jpg");
+    background-image: url("../img/trianglify.png");
     color: white;
     font-style: bold;
 }
@@ -46,10 +46,15 @@ textarea {
 .focus-box {
     background-color: #FFFFFF44;
     border-radius: 64px;
-    width: 80%;
+    width: 60%;
     margin: auto;
 }
 
 form {
     padding: 5%;
+}
+
+.closeButton {
+    background-color: transparent;
+    border: none;
 }

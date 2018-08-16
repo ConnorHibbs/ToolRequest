@@ -26,32 +26,28 @@
 
         <div class="focus-box">
             <form>
-                <div class="form-element">Name: <input type="text" size="30"></div>
-                <div class="form-element">Email: <input type="text" size="30"></div>
-                <div class="form-element">Department: <input type="text" size="30"></div>
+                <h3>Contact</h3>
+                <div class="form-element">Name: <input type="text" size="30" id="nameField"></div>
+                <div class="form-element">Email: <input type="text" size="30" id="emailField"></div>
+                <div class="form-element">Department: <input type="text" size="30" id="departmentField"></div>
 
                 <div class="form-element">
-                    Description of Tool<br>
+                    Description of the Problem<br>
                     <textarea id="description" class="auto-grow"></textarea><br>
                 </div>
 
+                <h3>Current Process</h3>
                 <div class="form-element">
-                    <p>Current Steps</p>
                     <table id="steps_table" class="table table-dark">
                         <thead>
-                            <tr><th>#</th><th style="width: 70%;">Description</th><th>Time Estimate<br>(minutes)</th></tr>
+                            <tr><th>#</th><th style="width: 85%;">Description</th><th>Time<br>(minutes)</th><th></th></tr>
                         </thead>
-
-                        <tbody id="steps">
-                            <tr>
-                                <td>1</td>>
-                                <td><textarea class="table-text auto-grow" rows="3"></textarea></td>
-                                <td><textarea class="table-text" rows="1"></textarea></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="steps"></tbody>
                     </table>
                     <button type="button" id="add_steps" class="btn btn-info">+ Steps</button>
                 </div>
+
+                <h3>Desired Solution</h3>
 
                 <div class="form-element">
                     Time Saved
