@@ -1,14 +1,16 @@
 // the nodejs server to run behind the feature request website
 
 let express = require('express');
+let bodyParser = require('body-parser');
 let app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    
     res.sendFile(__dirname + '/index.html');
-
 });
 
 app.get('/demo', (req, res) => {
@@ -16,8 +18,7 @@ app.get('/demo', (req, res) => {
 });
 
 app.post('/request', (req, res) => {
-    
-
+    console.log(req.body);
 });
 
 app.listen(3000);
