@@ -1,0 +1,66 @@
+<!-- The basic file (home) for the tool request project -->
+
+<html>
+    <head>
+        <title>Request a New Software Tool</title>
+
+        <!-- jQuery and jQuery-UI-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css">
+
+        <!-- Bootstrap -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- Local Files -->
+        <script src="js/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles/index.css">
+
+    </head>
+
+    <body>
+        <h1>Virtual Distribution Software Request Tool</h1>
+        <h4>You can open a request to the Virtual Distribution team to help automate your daily work.</h3>
+
+        <div class="focus-box">
+            <form>
+                <div class="form-element">Name: <input type="text" size="30"></div>
+                <div class="form-element">Email: <input type="text" size="30"></div>
+                <div class="form-element">Department: <input type="text" size="30"></div>
+
+                <div class="form-element">
+                    Description of Tool<br>
+                    <textarea id="description" class="auto-grow"></textarea><br>
+                </div>
+
+                <div class="form-element">
+                    <p>Current Steps</p>
+                    <table id="steps_table" class="table table-dark">
+                        <thead>
+                            <tr><th>#</th><th style="width: 70%;">Description</th><th>Time Estimate<br>(minutes)</th></tr>
+                        </thead>
+
+                        <tbody id="steps">
+                            <tr>
+                                <td>1</td>>
+                                <td><textarea class="table-text auto-grow" rows="3"></textarea></td>
+                                <td><textarea class="table-text" rows="1"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" id="add_steps" class="btn btn-info">+ Steps</button>
+                </div>
+
+                <div class="form-element">
+                    Time Saved
+                    <input type="text" size="10">
+                </div>
+
+                <button type="button" id="submit_button" class="btn">Submit to vDist</button>
+
+            </form>
+        </div>
+    </body>
+</html>

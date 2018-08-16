@@ -1,0 +1,23 @@
+{
+  "name": "tool-request",
+  "version": "1.0.0",
+  "description": "A tool for requesting new features to improve your workflow",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chibbs96/ToolRequest.git"
+  },
+  "author": "Connor Hibbs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chibbs96/ToolRequest/issues"
+  },
+  "homepage": "https://github.com/chibbs96/ToolRequest#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

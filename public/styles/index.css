@@ -1,0 +1,55 @@
+h1, h2, h3, h4, h5 {
+    text-align: center;
+}
+
+div {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+body {
+    background-image: url("../img/blueprint.jpg");
+    color: white;
+    font-style: bold;
+}
+
+input, textarea {
+    color: darkblue;
+    background-color: #FFFFFFBB;
+}
+
+textarea {
+    overflow: hidden;
+    resize: none;
+}
+
+#description {
+    margin: auto;
+    width: 100%;
+}
+
+#submit_button {
+    text-align: center;
+    margin: auto;
+}
+
+.form-element {
+    padding: 10px;
+}
+
+.table-text {
+    width: 100%;
+    border-width: 2px;
+    border-color: lightblue;
+}
+
+.focus-box {
+    background-color: #FFFFFF44;
+    border-radius: 64px;
+    width: 80%;
+    margin: auto;
+}
+
+form {
+    padding: 5%;
+}
