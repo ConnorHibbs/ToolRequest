@@ -19,6 +19,9 @@ app.get('/demo', (req, res) => {
 
 app.post('/request', (req, res) => {
     console.log(req.body);
+
+    res.write('Thanks!');
+    res.end();
 });
 
 app.listen(3000);

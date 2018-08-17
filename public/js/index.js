@@ -112,11 +112,43 @@ function enableAutoGrowOn(textarea) {
 }
 
 function generateRequest() {
-    let request = {};
+    let request = {
+        name: $("#nameField").val(),
+        email: $("#emailField").val(),
+        department: $("#departmentField").val(),
+        problem: $("#description").val(),
+        process: []
+    }
 
-    request.name = $("#nameField").val();
-    request.email = $("#emailField").val();
-    request.department = $("#departmentField").val();
+    // load all of the process steps into the request
+    let table = document.getElementById("steps_table");
+    for (let i = 1, row; row = table.rows[i]; i++) {
+        let step = {};
+        step.number = row.cells[0].innerHTML;
+        step.description = row.cells[1].innerHTML;
+        step.time = row.cells[2].innerHTML;
+        request.process.push(step);
+    }
+
+    // send the POST request to the server with all of the details
+    // $.ajax({
+    //     type: "POST",
+    //     url: 'http://localhost:3000/request',
+    //     // data: JSON.stringify(request),
+    //     data: request,
+    //     // success: (res) => console.log(res),
+    //     contentType: "application/json"
+    // });
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://localhost:3000/request", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.onreadystatechange = () => {
+        if(xhttp.readyState === 4 && xhttp.status === 200) {
+            console.log(xhttp.responseText);
+        }
+    }
+    xhttp.send(JSON.stringify(request));
 
     console.log(request);
 }
